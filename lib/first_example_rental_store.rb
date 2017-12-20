@@ -21,6 +21,21 @@ class Rental
     @movie = movie
     @days_rented = days_rented
   end
+
+  def charge
+    result = 0
+    case movie.price_code
+    when Movie::REGULAR
+      result += 2
+      result += (days_rented - 2) * 1.5 if days_rented > 2
+    when Movie::NEW_RELEASE
+      result += days_rented * 3
+    when Movie::CHILDRENS
+      result += 1.5
+      result += (days_rented - 3) * 1.5 if days_rented > 3
+    end
+    result
+  end
 end
 
 # Represents the customer of the store.
@@ -34,6 +49,10 @@ class Customer
 
   def add_rental(arg)
     @rentals << arg
+  end
+
+  def amount_for(rental)
+    rental.charge
   end
 
   def statement
@@ -62,25 +81,11 @@ class Customer
     result
   end
 
-  def amount_for(rental)
-    result = 0
-    case rental.movie.price_code
-    when Movie::REGULAR
-      result += 2
-      result += (rental.days_rented - 2) * 1.5 if rental.days_rented > 2
-    when Movie::NEW_RELEASE
-      result += rental.days_rented * 3
-    when Movie::CHILDRENS
-      result += 1.5
-      result += (rental.days_rented - 3) * 1.5 if rental.days_rented > 3
-    end
-    result
-  end
 end
-
-logan_movie = Movie.new('Logan', 0)
-rent = Rental.new(logan_movie, 3)
-jack = Customer.new 'Jack'
-jack.add_rental rent
-p jack.rentals
-print jack.statement
+#
+# logan_movie = Movie.new('Logan', 0)
+# rent = Rental.new(logan_movie, 3)
+# jack = Customer.new 'Jack'
+# jack.add_rental rent
+# p jack.rentals
+# print jack.statement

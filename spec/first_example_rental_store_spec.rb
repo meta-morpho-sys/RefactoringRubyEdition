@@ -13,15 +13,19 @@ describe Movie do
 end
 
 describe Rental do
-  let(:movie) { double :Logan }
-  let(:rental) { Rental.new :Logan, 2 }
+  let(:movie_logan) { double :Logan, price_code: 1, title: 'Logan' }
+  let(:rental) { Rental.new movie_logan, 2 }
 
   it 'has the movie' do
-    expect(rental.movie).to eq :Logan
+    expect(rental.movie).to eq movie_logan
   end
 
   it 'stores the number of rental days' do
     expect(rental.days_rented).to eq 2
+  end
+
+  it 'calculates the charge' do
+    expect(rental.charge).to eq 6
   end
 end
 
@@ -40,11 +44,12 @@ describe Customer do
   end
 
   it 'prints a statement' do
+    allow(rental).to receive(:charge) { 3.5 }
   statement = %(Rental Record for James:
 \tLogan	 at the cost of 3.5£
 \tAmount owed is 3.5.
 \tYou earned 1 frequent renter points.)
-  customer.add_rental(rental)
-  expect(customer.statement).to eq statement
+    customer.add_rental(rental)
+    expect(customer.statement).to eq statement
   end
 end
