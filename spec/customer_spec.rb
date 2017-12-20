@@ -4,8 +4,9 @@ require 'rental'
 
 describe Customer do
   let(:customer) { Customer.new :James }
-  let(:movie) { double :test_movie, title: 'Logan', price_code: 0 }
-  let(:rental) { double :rental, movie: movie, days_rented: 3 }
+  let(:test_movie) { double :movie, title: 'Logan', price_code: 0 }
+  let(:movie_new_release) { double :movie, title: 'Logan', price_code: 1 }
+  let(:rental) { double :rental, movie: test_movie, days_rented: 3 }
 
   it 'has name by default' do
     expect(customer.name).to eq :James
@@ -26,5 +27,10 @@ describe Customer do
       EOF
     customer.add_rental(rental)
     expect(customer.statement).to eq statement
+  end
+
+  it 'calculates points for frequent use' do
+     rent_2_days = Rental.new(movie_new_release, 2)
+     expect(customer.compute_frequent_renter_points(rent_2_days)).to eq 2
   end
 end
