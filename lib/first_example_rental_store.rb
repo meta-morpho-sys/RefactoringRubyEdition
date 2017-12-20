@@ -8,7 +8,8 @@ class Movie
   attr_accessor :price_code
 
   def initialize(title, price_code)
-    @title, @price_code = title, price_code
+    @title = title
+    @price_code = price_code
   end
 end
 
@@ -17,7 +18,8 @@ class Rental
   attr_reader :movie, :days_rented
 
   def initialize(movie, days_rented)
-    @movie, @days_rented = movie, days_rented
+    @movie = movie
+    @days_rented = days_rented
   end
 end
 
@@ -35,7 +37,8 @@ class Customer
   end
 
   def statement
-    total_amount, frequent_renter_points = 0, 0
+    total_amount = 0
+    frequent_renter_points = 0
     result = "Rental Record for #{@name}:\n"
     @rentals.each do |element|
       this_amount = 0
