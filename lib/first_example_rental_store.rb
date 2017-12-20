@@ -41,19 +41,7 @@ class Customer
     frequent_renter_points = 0
     result = "Rental Record for #{@name}:\n"
     @rentals.each do |element|
-      this_amount = 0
-
-      # determine amount for each line
-      case element.movie.price_code
-      when Movie::REGULAR
-        this_amount += 2
-        this_amount += (element.days_rented - 2) * 1.5 if element.days_rented > 2
-      when Movie::NEW_RELEASE
-        this_amount += element.days_rented * 3
-      when Movie::CHILDRENS
-        this_amount += 1.5
-        this_amount += (element.days_rented - 3) * 1.5 if element.days_rented > 3
-      end
+      this_amount = amount_for(element)
 
       # add frequent renter points
       frequent_renter_points += 1
@@ -73,11 +61,26 @@ class Customer
     result += "\tYou earned #{frequent_renter_points} frequent renter points."
     result
   end
+
+  def amount_for(rental)
+    result = 0
+    case rental.movie.price_code
+    when Movie::REGULAR
+      result += 2
+      result += (rental.days_rented - 2) * 1.5 if rental.days_rented > 2
+    when Movie::NEW_RELEASE
+      result += rental.days_rented * 3
+    when Movie::CHILDRENS
+      result += 1.5
+      result += (rental.days_rented - 3) * 1.5 if rental.days_rented > 3
+    end
+    result
+  end
 end
 
-# logan_movie = Movie.new('Logan', 0)
-# rent = Rental.new(logan_movie, 3)
-# jack = Customer.new 'Jack'
-# jack.add_rental rent
-# p jack.rentals
-# print jack.statement
+logan_movie = Movie.new('Logan', 0)
+rent = Rental.new(logan_movie, 3)
+jack = Customer.new 'Jack'
+jack.add_rental rent
+p jack.rentals
+print jack.statement
