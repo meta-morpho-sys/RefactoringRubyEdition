@@ -14,24 +14,23 @@ class Customer
   end
 
   def statement
-    frequent_renter_points = 0
     result = "Rental Record for #{@name}:\n"
     @rentals.each do |element|
-      # add frequent renter points
-      frequent_renter_points += element.frequent_renter_points
-
       # show figures for this rental
       result += "\t" + element.movie.title + "\t at the cost of " + element.charge.to_s + "£\n"
-      # total_amount += element.charge
     end
 
     # add footer lines
     result += "\tAmount owed is #{total_charge}.\n"
-    result += "\tYou earned #{frequent_renter_points} frequent renter points."
+    result += "\tYou earned #{total_frequent_renter_points} frequent renter points."
     result
   end
 
   private
+
+  def total_frequent_renter_points
+    @rentals.inject(0) { |sum, rental| sum + rental.frequent_renter_points }
+  end
 
   def total_charge
     @rentals.inject(0) { |sum, rental| sum + rental.charge }
