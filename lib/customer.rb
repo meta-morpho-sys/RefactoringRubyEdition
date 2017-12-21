@@ -21,8 +21,7 @@ class Customer
       frequent_renter_points += element.frequent_renter_points
 
       # show figures for this rental
-      result += "\t" + element.movie.title + "\t at the cost of "
-      + element.charge.to_s + "£\n"
+      result += "\t" + element.movie.title + "\t at the cost of " + element.charge.to_s + "£\n"
       # total_amount += element.charge
     end
 
@@ -35,11 +34,7 @@ class Customer
   private
 
   def total_charge
-    result = 0
-    @rentals.each do |element|
-      result += element.charge
-    end
-    result
+    @rentals.inject(0) { |sum, rental| sum + rental.charge }
   end
 end
 
