@@ -19,17 +19,27 @@ class Customer
       # show figures for this rental
       result += "\t" + element.movie.title + "\t at the cost of " + element.charge.to_s + "£\n"
     end
-
     # add footer lines
     result += "\tAmount owed is #{total_charge}.\n"
     result += "\tYou earned #{total_frequent_renter_points} frequent renter points."
-    result
+  end
+
+  def html_statement
+    result = "<h1>Rentals for <em>#{@name}</em></h1><p>\n"
+    @rentals.each do |element|
+      # show figures for this rental
+      result += "\t" + element.movie.title + ':' + ' at the cost of £' + element.charge.to_s + "<br>\n"
+    end
+    # add footer lines
+    result += "\tYou owe £<em>#{total_charge}</em><p>\n"
+    result += "\tOn this rental you earned <em>#{total_frequent_renter_points}</em> frequent renter points<p>."
   end
 
   private
 
   def total_frequent_renter_points
     @rentals.map(&:frequent_renter_points).sum
+    # The previous line does the same job as the one below.
     # The previous line does the same job as the one below.
     # @rentals.inject(0) { |sum, rental| sum + rental.frequent_renter_points }
   end
