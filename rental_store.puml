@@ -5,6 +5,9 @@ class Customer {
 
     +add_rental()
     +statement()
+    -total_charge()
+    -total_frequent_renter_points()
+
 
 }
 

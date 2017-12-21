@@ -29,7 +29,9 @@ class Customer
   private
 
   def total_frequent_renter_points
-    @rentals.inject(0) { |sum, rental| sum + rental.frequent_renter_points }
+    @rentals.map(&:frequent_renter_points).sum
+    # The previous line does the same job as the one below.
+    # @rentals.inject(0) { |sum, rental| sum + rental.frequent_renter_points }
   end
 
   def total_charge
