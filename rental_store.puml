@@ -1,0 +1,27 @@
+@startuml
+
+class Customer {
+    name
+
+    +add_rental()
+    +statement()
+
+}
+
+class Rental {
+
+    days_rented
+    +charge()
+    +frequent_renter_points()
+    -eligible_for_bonus?()
+}
+
+class Movie {
+    title
+    price_code
+}
+
+Rental "1" *--> "1" Movie: movie
+Customer "1" *--> "*" Rental: rentals [ ]
+
+@enduml

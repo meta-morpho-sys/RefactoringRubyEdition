@@ -15,4 +15,8 @@ describe Rental do
   it 'calculates the charge' do
     expect(rental.charge).to eq 6
   end
+
+  it 'calculates points for frequent use' do
+    expect(rental.frequent_renter_points).to eq 2
+  end
 end

@@ -14,30 +14,32 @@ class Customer
   end
 
   def statement
-    total_amount = 0
     frequent_renter_points = 0
     result = "Rental Record for #{@name}:\n"
     @rentals.each do |element|
       # add frequent renter points
-      frequent_renter_points += compute_frequent_renter_points(element)
+      frequent_renter_points += element.frequent_renter_points
 
       # show figures for this rental
-      result += "\t" + element.movie.title + "\t at the cost of " + element.charge.to_s + "£\n"
-      total_amount += element.charge
+      result += "\t" + element.movie.title + "\t at the cost of "
+      + element.charge.to_s + "£\n"
+      # total_amount += element.charge
     end
 
     # add footer lines
-    result += "\tAmount owed is #{total_amount}.\n"
+    result += "\tAmount owed is #{total_charge}.\n"
     result += "\tYou earned #{frequent_renter_points} frequent renter points."
     result
   end
 
-  def compute_frequent_renter_points(rental)
-    if rental.movie.price_code == Movie::NEW_RELEASE && rental.days_rented > 1
-      2
-    else
-      1
+  private
+
+  def total_charge
+    result = 0
+    @rentals.each do |element|
+      result += element.charge
     end
+    result
   end
 end
 
