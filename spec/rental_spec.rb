@@ -1,7 +1,7 @@
 require 'rental'
 
 describe Rental do
-  let(:movie_logan) { double :Logan, price_code: 1, title: 'Logan' }
+  let(:movie_logan) { double :movie, price_code: 1, title: 'Logan', charge: 6 }
   let(:rental) { Rental.new movie_logan, 2 }
 
   it 'has the movie' do
@@ -13,6 +13,7 @@ describe Rental do
   end
   #
   it 'calculates the charge' do
+    # allow(movie_logan).to receive(:charge) { 6 }
     expect(rental.charge).to eq 6
   end
 

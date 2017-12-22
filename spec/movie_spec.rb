@@ -13,6 +13,6 @@ describe Movie do
   end
 
   it 'calculates the charge' do
-    expect(movie.charge).to eq 9
+    expect(movie.charge(3)).to eq 9
   end
 end
