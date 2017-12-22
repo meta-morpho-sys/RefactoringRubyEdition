@@ -1,0 +1,4 @@
+<h1>Rentals for <em>James</em></h1><p>
+	Logan: at the cost of £3.5<br>
+	You owe £<em>3.5</em><p>
+	On this rental you earned <em>1</em> frequent renter points<p>.

@@ -1,0 +1,4 @@
+Rental Record for James:
+	Logan at the cost of 3.5£
+	Amount owed is 3.5.
+	You earned 1 frequent renter points.

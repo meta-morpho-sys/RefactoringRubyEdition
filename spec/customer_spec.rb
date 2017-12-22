@@ -2,10 +2,16 @@ require 'customer'
 require 'movie'
 require 'rental'
 
+def load_file(filename)
+  File.readlines(ASSETS_DIR + filename).join
+end
+
 describe Customer do
   let(:customer) { Customer.new :James }
   let(:test_movie) { double :movie, title: 'Logan', price_code: 0 }
   let(:rental) { double :rental, movie: test_movie, days_rented: 3 }
+  # rubocop:disable Style/MutableConstant
+  ASSETS_DIR = '/Users/astarte/MyCodeExperiments/RefactoringRubyEdition/assets/'
 
   it 'has name by default' do
     expect(customer.name).to eq :James
@@ -19,28 +25,18 @@ describe Customer do
   context 'prints statements' do
     before(:each) do
       allow(rental).to receive_messages(
-                           charge: 3.5,
-                           frequent_renter_points: 1
-                       )
+        charge: 3.5,
+        frequent_renter_points: 1
+      )
     end
     it 'text statement' do
-      statement = <<~EOF.chomp
-        Rental Record for James:
-        \tLogan	 at the cost of 3.5£
-        \tAmount owed is 3.5.
-        \tYou earned 1 frequent renter points.
-        EOF
+      text_statement = load_file('statement_output.txt')
       customer.add_rental(rental)
-      expect(customer.statement).to eq statement
+      expect(customer.statement).to eq text_statement
     end
 
     it 'html_statement' do
-      html_statement = <<~EOF.chomp
-        <h1>Rentals for <em>James</em></h1><p>
-        \tLogan: at the cost of £3.5<br>
-        \tYou owe £<em>3.5</em><p>
-        \tOn this rental you earned <em>1</em> frequent renter points<p>.
-      EOF
+      html_statement = load_file('html_statement_output.txt')
       customer.add_rental(rental)
       expect(customer.html_statement).to eq html_statement
     end

@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.1/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.1/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.1/favicon_green.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.1/favicon_yellow.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.1/favicon.png" />
   </head>
   
@@ -14,27 +14,27 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-12-21T22:22:32+00:00">2017-12-21T22:22:32+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-12-22T22:12:04+00:00">2017-12-22T22:12:04+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.43%</span></span>
+    (<span class="covered_percent"><span class="yellow">90.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.43
+         1.08
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>4</b> files in total.
-    <b>84</b> relevant lines. 
+    <b>90</b> relevant lines. 
     <span class="green"><b>81</b> lines covered</span> and
-    <span class="red"><b>3</b> lines missed </span>
+    <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,37 +57,37 @@
         <td>32</td>
         <td>32</td>
         <td>0</td>
-        <td>1.7</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#6011ba173fcb54fcedaf6d1eac1d4f08b7b2084d" class="src_link" title="lib/movie.rb">lib/movie.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>14</td>
-        <td>9</td>
-        <td>9</td>
-        <td>0</td>
-        <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#660f898ddd8f5838a3ad50e2bce99a9ee3f21546" class="src_link" title="lib/rental.rb">lib/rental.rb</a></td>
-        <td class="yellow strong">85.0 %</td>
-        <td>35</td>
-        <td>20</td>
-        <td>17</td>
+        <td class="yellow strong">84.21 %</td>
+        <td>30</td>
+        <td>19</td>
+        <td>16</td>
         <td>3</td>
         <td>1.1</td>
       </tr>
       
       <tr>
-        <td class="strong"><a href="#0864e67195663bc0ccd8010f3dbc8cc6455706be" class="src_link" title="spec/customer_spec.rb">spec/customer_spec.rb</a></td>
+        <td class="strong"><a href="#660f898ddd8f5838a3ad50e2bce99a9ee3f21546" class="src_link" title="lib/rental.rb">lib/rental.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>48</td>
-        <td>23</td>
-        <td>23</td>
+        <td>24</td>
+        <td>13</td>
+        <td>13</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.1</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#0864e67195663bc0ccd8010f3dbc8cc6455706be" class="src_link" title="spec/customer_spec.rb">spec/customer_spec.rb</a></td>
+        <td class="red strong">76.92 %</td>
+        <td>43</td>
+        <td>26</td>
+        <td>20</td>
+        <td>6</td>
+        <td>0.9</td>
       </tr>
       
     </tbody>
@@ -162,14 +162,14 @@
           <code class="ruby">  def initialize(name)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="8">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">    @name = name</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="9">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
           <code class="ruby">    @rentals = []</code>
         </li>
@@ -192,8 +192,8 @@
           <code class="ruby">  def add_rental(arg)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
           
           <code class="ruby">    @rentals &lt;&lt; arg</code>
         </li>
@@ -216,14 +216,14 @@
           <code class="ruby">  def statement</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="17">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
           <code class="ruby">    result = &quot;Rental Record for #{@name}:\n&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
           <code class="ruby">    @rentals.each do |element|</code>
         </li>
@@ -234,10 +234,10 @@
           <code class="ruby">      # show figures for this rental</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
-          <code class="ruby">      result += &quot;\t&quot; + element.movie.title + &quot;\t at the cost of &quot; + element.charge.to_s + &quot;£\n&quot;</code>
+          <code class="ruby">      result += &quot;\t&quot; + element.movie.title + &#39; at the cost of &#39; + element.charge.to_s + &quot;£\n&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
@@ -252,14 +252,14 @@
           <code class="ruby">    # add footer lines</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
           <code class="ruby">    result += &quot;\tAmount owed is #{total_charge}.\n&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
           <code class="ruby">    result += &quot;\tYou earned #{total_frequent_renter_points} frequent renter points.&quot;</code>
         </li>
@@ -360,8 +360,8 @@
           <code class="ruby">  def total_frequent_renter_points</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="41">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="41">
+          <span class="hits">2</span>
           
           <code class="ruby">    @rentals.map(&amp;:frequent_renter_points).sum</code>
         </li>
@@ -402,8 +402,8 @@
           <code class="ruby">  def total_charge</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="48">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="4" data-linenumber="48">
+          <span class="hits">4</span>
           
           <code class="ruby">    @rentals.inject(0) { |sum, rental| sum + rental.charge }</code>
         </li>
@@ -470,96 +470,192 @@
         <div class="source_table" id="6011ba173fcb54fcedaf6d1eac1d4f08b7b2084d">
   <div class="header">
     <h3>lib/movie.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">84.21 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>19</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
   <pre>
     <ol>
       
-        <li class="never" data-hits="" data-linenumber="1">
-          
-          
-          <code class="ruby"># Just a simple data class.</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Movie</code>
+          <code class="ruby">require_relative &#39;rental&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"># Stores names and price codes and calculates the rental charge.</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  REGULAR = 0</code>
+          <code class="ruby">class Movie</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  NEW_RELEASE = 1</code>
+          <code class="ruby">  REGULAR = 0</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
+          <code class="ruby">  NEW_RELEASE = 1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
           <code class="ruby">  CHILDRENS = 2</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  attr_reader :title</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
+          <code class="ruby">  attr_reader :title</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
           <code class="ruby">  attr_accessor :price_code</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def initialize(title, price_code)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">    @title = title</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    @price_code = price_code</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def charge(days_rented)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    result = 0</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    case price_code</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    when Movie::REGULAR</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      result += 2</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      result += (days_rented - 2) * 1.5 if days_rented &gt; 2</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">    when Movie::NEW_RELEASE</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="23">
+          
+          
+          <code class="ruby">      result += days_rented * 3</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">    when Movie::CHILDRENS</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="25">
+          
+          
+          <code class="ruby">      result += 1.5</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="26">
+          
+          
+          <code class="ruby">      result += (days_rented - 3) * 1.5 if days_rented &gt; 3</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="28">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    result</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">end</code>
@@ -573,11 +669,11 @@
         <div class="source_table" id="660f898ddd8f5838a3ad50e2bce99a9ee3f21546">
   <div class="header">
     <h3>lib/rental.rb</h3>
-    <h4><span class="yellow">85.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -653,142 +749,76 @@
         <li class="covered" data-hits="2" data-linenumber="12">
           <span class="hits">2</span>
           
-          <code class="ruby">    result = 0</code>
+          <code class="ruby">    movie.charge(days_rented)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="13">
           
-          <code class="ruby">    case movie.price_code</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    when Movie::REGULAR</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="15">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      result += 2</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="16">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      result += (days_rented - 2) * 1.5 if days_rented &gt; 2</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">    when Movie::NEW_RELEASE</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">      result += days_rented * 3</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">    when Movie::CHILDRENS</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
-          
-          <code class="ruby">      result += 1.5</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">      result += (days_rented - 3) * 1.5 if days_rented &gt; 3</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    result</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">  def frequent_renter_points</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">    eligible_for_bonus? ? 2 : 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">  def eligible_for_bonus?</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
           <code class="ruby">    movie.price_code == Movie::NEW_RELEASE &amp;&amp; days_rented &gt; 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="35">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">end</code>
@@ -802,11 +832,11 @@
         <div class="source_table" id="0864e67195663bc0ccd8010f3dbc8cc6455706be">
   <div class="header">
     <h3>spec/customer_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">76.92 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>26</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -840,73 +870,73 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
+          <code class="ruby">def load_file(filename)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  File.readlines(ASSETS_DIR + filename).join</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
           <code class="ruby">describe Customer do</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="6">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">  let(:customer) { Customer.new :James }</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="7">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
           <code class="ruby">  let(:test_movie) { double :movie, title: &#39;Logan&#39;, price_code: 0 }</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
           
           <code class="ruby">  let(:rental) { double :rental, movie: test_movie, days_rented: 3 }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  ASSETS_DIR = &#39;/Users/astarte/MyCodeExperiments/RefactoringRubyEdition/assets/&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;has name by default&#39; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(customer.name).to eq :James</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;makes a rental&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    customer.add_rental(rental)</code>
+          <code class="ruby">  it &#39;has name by default&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="16">
           
-          <code class="ruby">    expect(customer.rentals).to eq [rental]</code>
+          
+          <code class="ruby">    expect(customer.name).to eq :James</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -924,97 +954,97 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  context &#39;prints statements&#39; do</code>
+          <code class="ruby">  it &#39;makes a rental&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="20">
           
-          <code class="ruby">    before(:each) do</code>
+          
+          <code class="ruby">    customer.add_rental(rental)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="21">
           
-          <code class="ruby">      allow(rental).to receive_messages(</code>
+          
+          <code class="ruby">    expect(customer.rentals).to eq [rental]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">                           charge: 3.5,</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">                           frequent_renter_points: 1</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">                       )</code>
+          <code class="ruby">  context &#39;prints statements&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">    before(:each) do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;text statement&#39; do</code>
+          <code class="ruby">      allow(rental).to receive_messages(</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="27">
           
-          <code class="ruby">      statement = &lt;&lt;~EOF.chomp</code>
+          
+          <code class="ruby">                           charge: 3.5,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
-          <code class="ruby">        Rental Record for James:</code>
+          <code class="ruby">                           frequent_renter_points: 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby">        \tLogan	 at the cost of 3.5£</code>
+          <code class="ruby">                       )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
           
           
-          <code class="ruby">        \tAmount owed is 3.5.</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">        \tYou earned 1 frequent renter points.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="32">
-          
-          
-          <code class="ruby">        EOF</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;text statement&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">      text_statement = load_file(&#39;statement_output.txt&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="33">
+          
           
           <code class="ruby">      customer.add_rental(rental)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="34">
           
-          <code class="ruby">      expect(customer.statement).to eq statement</code>
+          
+          <code class="ruby">      expect(customer.statement).to eq text_statement</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -1038,64 +1068,34 @@
         <li class="covered" data-hits="1" data-linenumber="38">
           <span class="hits">1</span>
           
-          <code class="ruby">      html_statement = &lt;&lt;~EOF.chomp</code>
+          <code class="ruby">      html_statement = load_file(&#39;html_statement_output.txt&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">        &lt;h1&gt;Rentals for &lt;em&gt;James&lt;/em&gt;&lt;/h1&gt;&lt;p&gt;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">        \tLogan: at the cost of £3.5&lt;br&gt;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">        \tYou owe £&lt;em&gt;3.5&lt;/em&gt;&lt;p&gt;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">        \tOn this rental you earned &lt;em&gt;1&lt;/em&gt; frequent renter points&lt;p&gt;.</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">      EOF</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">      customer.add_rental(rental)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="45">
+        <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(customer.html_statement).to eq html_statement</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="48">
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">end</code>

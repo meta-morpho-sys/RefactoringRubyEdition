@@ -17,7 +17,7 @@ class Customer
     result = "Rental Record for #{@name}:\n"
     @rentals.each do |element|
       # show figures for this rental
-      result += "\t" + element.movie.title + "\t at the cost of " + element.charge.to_s + "£\n"
+      result += "\t" + element.movie.title + ' at the cost of ' + element.charge.to_s + "£\n"
     end
     # add footer lines
     result += "\tAmount owed is #{total_charge}.\n"
