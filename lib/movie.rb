@@ -1,4 +1,5 @@
-# Just a simple data class.
+require_relative 'rental'
+# Stores names and price codes and calculates the rental charge.
 class Movie
   REGULAR = 0
   NEW_RELEASE = 1
@@ -10,5 +11,20 @@ class Movie
   def initialize(title, price_code)
     @title = title
     @price_code = price_code
+  end
+
+  def charge(days_rented)
+    result = 0
+    case price_code
+    when Movie::REGULAR
+      result += 2
+      result += (days_rented - 2) * 1.5 if days_rented > 2
+    when Movie::NEW_RELEASE
+      result += days_rented * 3
+    when Movie::CHILDRENS
+      result += 1.5
+      result += (days_rented - 3) * 1.5 if days_rented > 3
+    end
+    result
   end
 end

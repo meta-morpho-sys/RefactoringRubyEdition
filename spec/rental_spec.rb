@@ -11,7 +11,7 @@ describe Rental do
   it 'stores the number of rental days' do
     expect(rental.days_rented).to eq 2
   end
-
+  #
   it 'calculates the charge' do
     expect(rental.charge).to eq 6
   end
