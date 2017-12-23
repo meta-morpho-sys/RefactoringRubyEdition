@@ -1,4 +1,3 @@
-require_relative 'movie'
 # The rental class represents a customer renting a movie.
 class Rental
   attr_reader :movie, :days_rented
@@ -13,12 +12,8 @@ class Rental
   end
 
   def frequent_renter_points
-    eligible_for_bonus? ? 2 : 1
-  end
-
-  private
-
-  def eligible_for_bonus?
-    movie.price_code == Movie::NEW_RELEASE && days_rented > 1
+    movie.frequent_renter_points(days_rented)
   end
 end
+
+

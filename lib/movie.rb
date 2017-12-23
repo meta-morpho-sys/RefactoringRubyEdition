@@ -1,4 +1,3 @@
-require_relative 'rental'
 # Stores names and price codes and calculates the rental charge.
 class Movie
   REGULAR = 0
@@ -26,5 +25,9 @@ class Movie
       result += (days_rented - 3) * 1.5 if days_rented > 3
     end
     result
+  end
+
+  def frequent_renter_points(days_rented)
+    price_code == NEW_RELEASE && days_rented > 1 ? 2 : 1
   end
 end

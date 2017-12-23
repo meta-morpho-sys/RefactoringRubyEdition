@@ -48,3 +48,8 @@ class Customer
     @rentals.inject(0) { |sum, rental| sum + rental.charge }
   end
 end
+
+p logan = Movie.new('Logan', 1)
+p rental = Rental.new(logan, 3)
+p logan.frequent_renter_points 3
+p rental.frequent_renter_points

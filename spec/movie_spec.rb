@@ -15,4 +15,8 @@ describe Movie do
   it 'calculates the charge' do
     expect(movie.charge(3)).to eq 9
   end
+
+  it 'calculates points for frequent use' do
+    expect(movie.frequent_renter_points(3)).to eq 2
+  end
 end
