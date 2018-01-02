@@ -1,4 +1,5 @@
 require 'movie'
+require 'price_code_error'
 
 describe Movie do
   let(:movie) { Movie.new('Logan', Movie::NEW_RELEASE) }
@@ -11,6 +12,11 @@ describe Movie do
 
   it 'has a price code' do
     expect(movie.price_code).to eq Movie::NEW_RELEASE
+  end
+
+  it 'raises an exception if no or wrong price code is applied' do
+    INVALID_PRICE_CODE = 5
+    expect { movie.price_code = INVALID_PRICE_CODE }.to raise_error PriceCodeError
   end
 
   it 'calculates the charge of a new release' do

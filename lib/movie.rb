@@ -1,4 +1,5 @@
 require_relative 'pricers'
+
 # Stores names and price codes and calculates the rental charge.
 class Movie
   REGULAR = 0
@@ -13,6 +14,7 @@ class Movie
              when REGULAR then RegularPrice.new
              when NEW_RELEASE then NewReleasePrice.new
              when CHILDRENS then ChildrensPrice.new
+             else raise PriceCodeError
              end
   end
 
