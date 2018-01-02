@@ -10,8 +10,7 @@ describe Customer do
   let(:customer) { Customer.new :James }
   let(:test_movie) { double :movie, title: 'Logan', price_code: 0 }
   let(:rental) { double :rental, movie: test_movie, days_rented: 3 }
-  # rubocop:disable Style/MutableConstant
-  ASSETS_DIR = '/Users/astarte/MyCodeExperiments/RefactoringRubyEdition/assets/'
+  ASSETS_DIR = File.dirname(__FILE__) + '/../assets/'
 
   it 'has name by default' do
     expect(customer.name).to eq :James
@@ -42,3 +41,4 @@ describe Customer do
     end
   end
 end
+

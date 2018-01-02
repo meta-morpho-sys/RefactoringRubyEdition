@@ -1,28 +1,35 @@
+require_relative 'pricers'
 # Stores names and price codes and calculates the rental charge.
 class Movie
   REGULAR = 0
   NEW_RELEASE = 1
   CHILDRENS = 2
 
-  attr_reader :title
-  attr_accessor :price_code
+  attr_reader :title, :price_code
 
-  def initialize(title, price_code)
+  def price_code=(value)
+    @price_code = value
+    @price = case price_code
+             when REGULAR then RegularPrice.new
+             when NEW_RELEASE then NewReleasePrice.new
+             when CHILDRENS then ChildrensPrice.new
+             end
+  end
+
+  def initialize(title, the_price_code)
     @title = title
-    @price_code = price_code
+    self.price_code = the_price_code
   end
 
   def charge(days_rented)
     result = 0
     case price_code
-    when Movie::REGULAR
-      result += 2
-      result += (days_rented - 2) * 1.5 if days_rented > 2
-    when Movie::NEW_RELEASE
-      result += days_rented * 3
-    when Movie::CHILDRENS
-      result += 1.5
-      result += (days_rented - 3) * 1.5 if days_rented > 3
+    when REGULAR
+      return @price.charge(days_rented)
+    when NEW_RELEASE
+      return @price.charge(days_rented)
+    when CHILDRENS
+      return @price.charge(days_rented)
     end
     result
   end

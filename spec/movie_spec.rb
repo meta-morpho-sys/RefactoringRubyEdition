@@ -1,7 +1,8 @@
 require 'movie'
 
 describe Movie do
-  let(:movie) { Movie.new('Logan', 1) }
+  let(:movie) { Movie.new('Logan', Movie::NEW_RELEASE) }
+  let(:new_release_pricer) { double :new_release_pricer, charge: 9 }
   let(:rental) { double :rental, movie, 3 }
 
   it 'has a title' do
@@ -9,11 +10,21 @@ describe Movie do
   end
 
   it 'has a price code' do
-    expect(movie.price_code).to eq described_class::NEW_RELEASE
+    expect(movie.price_code).to eq Movie::NEW_RELEASE
   end
 
-  it 'calculates the charge' do
+  it 'calculates the charge of a new release' do
     expect(movie.charge(3)).to eq 9
+  end
+
+  it 'calculates the charge of a childrens' do
+    kids = Movie.new('Ferdinand', Movie::CHILDRENS)
+    expect(kids.charge(4)).to eq 3
+  end
+
+  it 'calculates the charge of a regular rental' do
+    regular = Movie.new('Die Hard', Movie::REGULAR)
+    expect(regular.charge(3)).to eq 3.5
   end
 
   it 'calculates points for frequent use' do
