@@ -14,20 +14,20 @@ end
 
 describe NewReleasePrice do
   it 'calculates the charge with rent-days' do
-    regular = NewReleasePrice.new
-    expect(regular.charge(1)).to eq 3
+    new_release = NewReleasePrice.new
+    expect(new_release.charge(1)).to eq 3
   end
 end
 
 describe ChildrensPrice do
   it 'calculates the charge with rent-days' do
-    regular = ChildrensPrice.new
-    expect(regular.charge(1)).to eq 1.5
+    kids = ChildrensPrice.new
+    expect(kids.charge(1)).to eq 1.5
   end
 
   it 'calculates the charge with rent-days' do
-    regular = ChildrensPrice.new
-    expect(regular.charge(4)).to eq 3
+    kids = ChildrensPrice.new
+    expect(kids.charge(4)).to eq 3
   end
 
 
