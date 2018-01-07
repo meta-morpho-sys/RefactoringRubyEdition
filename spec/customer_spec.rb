@@ -41,4 +41,3 @@ describe Customer do
     end
   end
 end
-

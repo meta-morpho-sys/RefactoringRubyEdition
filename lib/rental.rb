@@ -15,5 +15,3 @@ class Rental
     movie.frequent_renter_points(days_rented)
   end
 end
-
-

@@ -1,13 +1,13 @@
 # The module returns number f points for all rents that are not
 # a New Release rent.
 module RentersPoints
-  def frequent_renter_points
+  def frequent_renter_points(_days_rented)
     1
   end
 end
 
 # Holds type code behaviour
-class RegularPrice
+class RegularPriceCalculator
   include RentersPoints
 
   def charge(days_rented)
@@ -18,7 +18,7 @@ class RegularPrice
 end
 
 # Holds type code behaviour
-class NewReleasePrice
+class NewReleasePriceCalculator
   def charge(days_rented)
     days_rented * 3
   end
@@ -29,7 +29,7 @@ class NewReleasePrice
 end
 
 # Holds type code behaviour
-class ChildrensPrice
+class ChildrensPriceCalculator
   include RentersPoints
   def charge(days_rented)
     result = 1.5

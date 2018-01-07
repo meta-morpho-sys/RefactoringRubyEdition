@@ -15,27 +15,31 @@ class Customer
     result = "Rental Record for #{@name}:\n"
     @rentals.each do |element|
       # show figures for this rental
-      result += "\t" + element.movie.title + ' at the cost of ' + element.charge.to_s + "£\n"
+      result += "\t" + element.movie.title + ' at the cost of ' + element
+                .charge.to_s + "£\n"
     end
     # add footer lines
     result += "\tAmount owed is #{total_charge}.\n"
-    result += "\tYou earned #{total_frequent_renter_points} frequent renter points."
+    result += "\tYou earned #{tfrp} frequent renter points."
   end
 
   def html_statement
     result = "<h1>Rentals for <em>#{@name}</em></h1><p>\n"
     @rentals.each do |element|
       # show figures for this rental
-      result += "\t" + element.movie.title + ':' + ' at the cost of £' + element.charge.to_s + "<br>\n"
+      result += "\t" + element.movie.title + ':' + ' at the cost of £' + element
+                .charge.to_s + "<br>\n"
     end
     # add footer lines
     result += "\tYou owe £<em>#{total_charge}</em><p>\n"
-    result += "\tOn this rental you earned <em>#{total_frequent_renter_points}</em> frequent renter points<p>."
+    result += "\tOn this rental you earned <em>#{tfrp}</em> frequent" \
+              ' renter points<p>.'
   end
 
   private
 
-  def total_frequent_renter_points
+  # tfrp stands for total_frequent_renter_points
+  def tfrp
     @rentals.map(&:frequent_renter_points).sum
     # The previous line does the same job as the one below.
     # The previous line does the same job as the one below.

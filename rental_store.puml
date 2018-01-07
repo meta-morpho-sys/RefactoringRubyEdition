@@ -2,13 +2,16 @@
 
 class Customer {
     name
-
     +add_rental()
     +statement()
+    +html_statement()
     -total_charge()
     -total_frequent_renter_points()
+}
 
-
+interface Rentable {
+   +charge()
+   +frequent_renter_points()
 }
 
 class Rental {
@@ -21,11 +24,41 @@ class Rental {
 
 class Movie {
     title
-    price_code
-    +charge()
+    +charge(days_rented)
+    +frequent_renter_points(days_rented)
+    +valid_price_calculator?(candidate)
 }
 
-Rental "1" *--> "1" Movie: movie
-Customer "1" *--> "*" Rental: rentals [ ]
+class RentersPoints <<module>> {
+    frequent_renter_points(_days_rented)
+}
+
+class RegularPriceCalculator {
+    charge(days_rented)
+    frequent_renter_points(days_rented)
+}
+
+class NewReleasePriceCalculator {
+    charge(days_rented)
+    frequent_renter_points(days_rented)
+}
+
+class ChildrensPriceCalculator {
+    charge(days_rented)
+    frequent_renter_points(days_rented)
+}
+
+RentersPoints <-- RegularPriceCalculator
+RentersPoints <-- ChildrensPriceCalculator
+
+Rental "1" *..> "1" Movie: movie
+Customer "1" *..> "*" Rental: rentals [ ]
+
+'TODO: Implement the Rentable interface
+'Rentable <-- Movie
+'Rentable <-- Rental
+'Rentable <-- RegularPriceCalculator
+'Rentable <-- NewReleasePriceCalculator
+'Rentable <-- ChildrensPriceCalculator
 
 @enduml

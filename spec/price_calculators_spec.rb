@@ -1,7 +1,7 @@
-require 'pricers'
+require 'price_calculators'
 
-describe RegularPrice do
-  let(:regular) { RegularPrice.new }
+describe RegularPriceCalculator do
+  let(:regular) { RegularPriceCalculator.new }
 
   it 'calculates the charge with rent-days' do
     expect(regular.charge(1)).to eq 2
@@ -12,12 +12,12 @@ describe RegularPrice do
   end
 
   it 'calculates points for frequent use' do
-    expect(regular.frequent_renter_points).to eq 1
+    expect(regular.frequent_renter_points(2)).to eq 1
   end
 end
 
-describe NewReleasePrice do
-  let(:new_release) { NewReleasePrice.new }
+describe NewReleasePriceCalculator do
+  let(:new_release) { NewReleasePriceCalculator.new }
 
   it 'calculates the charge with rent-days' do
     expect(new_release.charge(1)).to eq 3
@@ -32,8 +32,8 @@ describe NewReleasePrice do
   end
 end
 
-describe ChildrensPrice do
-  let(:kids) { ChildrensPrice.new }
+describe ChildrensPriceCalculator do
+  let(:kids) { ChildrensPriceCalculator.new }
 
   it 'calculates the charge with 1 rent-day' do
     expect(kids.charge(1)).to eq 1.5
@@ -44,6 +44,6 @@ describe ChildrensPrice do
   end
 
   it 'calculates points for frequent use' do
-    expect(kids.frequent_renter_points).to eq 1
+    expect(kids.frequent_renter_points(1)).to eq 1
   end
 end

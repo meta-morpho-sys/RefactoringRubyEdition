@@ -1,33 +1,40 @@
-require_relative 'pricers'
+require_relative 'price_calculators'
+
+# Self-documenting error message.
+class PriceError < StandardError
+  def initialize(msg = 'Wrong price_calculator.'\
+  ' Use an instance of the price_calculator classes. 😜')
+    super
+  end
+end
 
 # Stores names and price codes and calculates the rental charge.
 class Movie
-  REGULAR = 0
-  NEW_RELEASE = 1
-  CHILDRENS = 2
+  attr_reader :title
+  attr_writer :price_calculator
 
-  attr_reader :title, :price_code
-
-  def price_code=(value)
-    @price_code = value
-    @price = case price_code
-             when REGULAR then RegularPrice.new
-             when NEW_RELEASE then NewReleasePrice.new
-             when CHILDRENS then ChildrensPrice.new
-             else raise PriceCodeError
-             end
+  def price_calculator=(price_calculator)
+    raise PriceError unless valid_price_calculator? price_calculator
+    @price_calculator = price_calculator
   end
 
-  def initialize(title, the_price_code)
+  def initialize(title, price_calculator)
+    self.price_calculator = price_calculator
     @title = title
-    self.price_code = the_price_code
   end
 
   def charge(days_rented)
-    @price.charge(days_rented)
+    @price_calculator.charge(days_rented)
   end
 
   def frequent_renter_points(days_rented)
-    @price.frequent_renter_points(days_rented)
+    @price_calculator.frequent_renter_points(days_rented)
+  end
+
+  def valid_price_calculator?(candidate)
+    [RegularPriceCalculator, NewReleasePriceCalculator,
+     ChildrensPriceCalculator].any? do |c|
+      candidate.instance_of?(c)
+    end
   end
 end
